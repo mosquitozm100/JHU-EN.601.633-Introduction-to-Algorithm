@@ -1,0 +1,150 @@
+\documentclass[letterpaper, 11pt]{article}
+\usepackage{latexsym}
+\usepackage{amssymb}
+\usepackage{times}
+%\usepackage[in]{fullpage}
+\usepackage{amsmath,amsfonts,amsthm}
+\usepackage{graphicx}
+
+%\documentclass[11pt]{article}
+%\pagestyle{myheadings}
+%\usepackage[ruled,nothing]{algorithm}
+%\usepackage{algorithmic}
+%\usepackage[dvips]{epsfig,graphicx}
+%\numberwithin{equation}{section}
+
+\bibliographystyle{plain}
+
+\newenvironment{newalgo}[2]{\begin{algorithm}
+
+\caption{\textsc{#1}}\label{#2}
+
+\begin{algorithmic}[1]}{\end{algorithmic}\end{algorithm}}
+
+
+
+\newcommand{\gm}{\gamma}
+\newcommand{\wh}{\widehat}
+\newcommand{\rep}{representation}
+\newcommand{\rv}{random variable}
+\newcommand{\la}{\lambda}
+\newcommand{\wt}{\widetilde}
+\newcommand{\st}{such that}
+\newcommand{\slvary}{slowly varying}
+\newcommand{\ma}{moving average}
+\newcommand{\regvary}{regularly varying}
+\newcommand{\asy}{asymptotic}
+\newcommand{\ts}{time series}
+\newcommand{\id}{infinitely divisible}
+\newcommand{\seq}{sequence}
+\newcommand{\fidi}{finite dimensional \ds}
+
+\newcommand{\ble}{\begin{lemma}}
+\newcommand{\ele}{\end{lemma}}
+\newcommand{\bfX}{{\bf X}}
+\newcommand{\pro}{probabilit}
+\newcommand{\BX}{{\bf X}}
+\newcommand{\BY}{{\bf Y}}
+\newcommand{\BZ}{{\bf Z}}
+\newcommand{\BV}{{\bf V}}
+\newcommand{\BW}{{\bf W}}
+\newcommand{\reals}{{\mathbb R}}
+\newcommand{\bbr}{\reals}
+
+\newcommand{\balpha}{\mbox{\boldmath$\alpha$}}
+\newcommand{\bbeta}{\mbox{\boldmath$\beta$}}
+\newcommand{\bmu}{\mbox{\boldmath$\mu$}}
+\newcommand{\tbmu}{\mbox{\boldmath${\tilde \mu}$}}
+\newcommand{\bEta}{\mbox{\boldmath$\eta$}}
+
+
+\def \br#1{\left \{#1 \right \}}
+\def \pr#1{\left (#1 \right)}
+
+\newcommand{\Gm}{\Gamma}
+\newcommand{\ep}{\epsilon}
+
+
+\newtheorem{lemma}{Lemma}[section]
+\newtheorem{figur}[lemma]{Figure}
+\newtheorem{theorem}[lemma]{Theorem}
+\newtheorem{proposition}[lemma]{Proposition}
+\newtheorem{definition}[lemma]{Definition}
+\newtheorem{corollary}[lemma]{Corollary}
+\newtheorem{example}[lemma]{Example}
+\newtheorem{exercise}[lemma]{Exercise}
+\newtheorem{remark}[lemma]{Remark}
+\newtheorem{fig}[lemma]{Figure}
+\newtheorem{tab}[lemma]{Table}
+\newtheorem{fact}[lemma]{Fact}
+\newtheorem{test}{Lemma}
+\newtheorem{algorithm}[lemma]{Algorithm}
+
+\newcommand{\play}{\displaystyle}
+
+\newcommand{\ms}{measure}
+\newcommand{\beao}{\begin{eqnarray*}}
+\newcommand{\eeao}{\end{eqnarray*}\noindent}
+\newcommand{\beam}{\begin{eqnarray}}
+\newcommand{\eeam}{\end{eqnarray}\noindent}
+
+\newcommand{\halmos}{\hfill\mbox{\qed}\\}
+\newcommand{\fct}{function}
+\newcommand{\ins}{insurance}
+\newcommand{\ds}{distribution}
+
+\newcommand{\one}{{\bf 1}}
+\newcommand{\eid}{\buildrel{\rm d}\over {=}}
+\newcommand {\Or}{\rm ORDER}
+\newcommand {\In}{\rm INTER}
+
+\newcommand{\bbd}{{\mathbb D}}
+\newcommand{\vi}{$V_{ij}$ }
+\newcommand{\rr}{R^{\prime\prime}}
+%\newcommand{\R}{R^\prime}
+\newcommand{\ci}{\frac{1}{c}}
+\newcommand{\Vi}{V(n)}
+\newcommand{\dR}{\mathcal R}
+\newcommand{\md}[1]{\left(\ \rm{mod}\ \it{#1}\right)}
+\newcommand{\So}{s}
+%\begin{document}
+%\def\DoubleSpace{\baselineskip=24pt}
+%\DoubleSpace \sloppy
+
+\begin{document}
+
+
+
+\title{Homework \#6 \\ Algorithms I \\ 600.463 \\Spring 2017}
+\author{\textbf{Due on:} Thursday, April 6th, 11:59pm \\
+\textbf{Late submissions:} will NOT be accepted\\
+\textbf{Format:} Please start each problem on a new page.
+\\\textbf{Where to submit:} On Gradescope under HW6
+\\ Please type your answers; handwritten assignments will not be accepted.
+\\ To get full credit, your answers must be explained clearly,\\ with enough details
+and rigorous proofs.
+\\}
+
+\maketitle
+
+%%%%%%%%%%%%%%%%%%%
+
+\section*{Problem 1 (20 points)}
+Suppose you are given an undirected graph $G$ with weighted edges and a minimum spanning tree $T$ of $G$.
+\begin{itemize}
+\item Design an algorithm to update the minimum spanning tree when the weight of a single edge $e$ is \textit{increased}.
+\item Design an algorithm to update the minimum spanning tree when the weight of a single edge $e$ is \textit{decreased}.
+\end{itemize}
+In both cases, the input to your algorithm is the edge $e$ and its new weight; your algorithms should modify $T$ so that it is still a minimum spanning tree. Analyze the running time of your algorithms and prove the correctness.
+
+\section*{Problem 2 (20 points)}
+\subsection*{Problem 2.1 (10 points)}
+Let $G = (V,E)$ be a directed, weighted graph with weight function $w: E \to \mathbb{R}$. Give an $O(V E)$-time algorithm to find, for each vertex $v\in V$ , the value  $\delta^*(v) = min_{u \in V}\{\delta(u,v)\}$, where $\delta(u,v)$ is the \textit{shortest-path weight} from $u$ to $v$ defined in the textbook.
+
+
+\subsection*{Problem 2.2 (10 points)}
+Let $G = (V,E)$ be a directed, weighted graph with nonnegative weight function $w: E \to \{1,2,\dots,W\}$ for some nonnegative integer $W$. Devise an algorithm to compute the shortest path distances from a given source vertex $s$ in $O(W V + E)$ time.
+
+\end{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
