@@ -1,0 +1,5 @@
+1.1 2017 spring homework 5 problem 2.1
+1.2 2017 spring homework 5 problem 2.2
+2 https://www.geeksforgeeks.org/find-a-mother-vertex-in-a-graph/
+3 https://pamorrison.com/academic/papers/Algorithms-Various-1.html
+Starts with: You’re helping some security analysts monitor a collection of networked computers
