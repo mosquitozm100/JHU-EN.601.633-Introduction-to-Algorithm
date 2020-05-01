@@ -1,0 +1,150 @@
+\documentclass[letterpaper, 11pt]{article}
+\usepackage{latexsym}
+\usepackage{amssymb}
+\usepackage{times}
+%\usepackage[in]{fullpage}
+\usepackage{amsmath,amsfonts,amsthm}
+\usepackage{graphicx}
+
+%\documentclass[11pt]{article}
+%\pagestyle{myheadings}
+%\usepackage[ruled,nothing]{algorithm}
+%\usepackage{algorithmic}
+%\usepackage[dvips]{epsfig,graphicx}
+%\numberwithin{equation}{section}
+
+\bibliographystyle{plain}
+
+\newenvironment{newalgo}[2]{\begin{algorithm}
+
+\caption{\textsc{#1}}\label{#2}
+
+\begin{algorithmic}[1]}{\end{algorithmic}\end{algorithm}}
+
+
+
+\newcommand{\gm}{\gamma}
+\newcommand{\wh}{\widehat}
+\newcommand{\rep}{representation}
+\newcommand{\rv}{random variable}
+\newcommand{\la}{\lambda}
+\newcommand{\wt}{\widetilde}
+\newcommand{\st}{such that}
+\newcommand{\slvary}{slowly varying}
+\newcommand{\ma}{moving average}
+\newcommand{\regvary}{regularly varying}
+\newcommand{\asy}{asymptotic}
+\newcommand{\ts}{time series}
+\newcommand{\id}{infinitely divisible}
+\newcommand{\seq}{sequence}
+\newcommand{\fidi}{finite dimensional \ds}
+
+\newcommand{\ble}{\begin{lemma}}
+\newcommand{\ele}{\end{lemma}}
+\newcommand{\bfX}{{\bf X}}
+\newcommand{\pro}{probabilit}
+\newcommand{\BX}{{\bf X}}
+\newcommand{\BY}{{\bf Y}}
+\newcommand{\BZ}{{\bf Z}}
+\newcommand{\BV}{{\bf V}}
+\newcommand{\BW}{{\bf W}}
+\newcommand{\reals}{{\mathbb R}}
+\newcommand{\bbr}{\reals}
+
+\newcommand{\balpha}{\mbox{\boldmath$\alpha$}}
+\newcommand{\bbeta}{\mbox{\boldmath$\beta$}}
+\newcommand{\bmu}{\mbox{\boldmath$\mu$}}
+\newcommand{\tbmu}{\mbox{\boldmath${\tilde \mu}$}}
+\newcommand{\bEta}{\mbox{\boldmath$\eta$}}
+
+
+\def \br#1{\left \{#1 \right \}}
+\def \pr#1{\left (#1 \right)}
+
+\newcommand{\Gm}{\Gamma}
+\newcommand{\ep}{\epsilon}
+
+
+\newtheorem{lemma}{Lemma}[section]
+\newtheorem{figur}[lemma]{Figure}
+\newtheorem{theorem}[lemma]{Theorem}
+\newtheorem{proposition}[lemma]{Proposition}
+\newtheorem{definition}[lemma]{Definition}
+\newtheorem{corollary}[lemma]{Corollary}
+\newtheorem{example}[lemma]{Example}
+\newtheorem{exercise}[lemma]{Exercise}
+\newtheorem{remark}[lemma]{Remark}
+\newtheorem{fig}[lemma]{Figure}
+\newtheorem{tab}[lemma]{Table}
+\newtheorem{fact}[lemma]{Fact}
+\newtheorem{test}{Lemma}
+\newtheorem{algorithm}[lemma]{Algorithm}
+
+\newcommand{\play}{\displaystyle}
+
+\newcommand{\ms}{measure}
+\newcommand{\beao}{\begin{eqnarray*}}
+\newcommand{\eeao}{\end{eqnarray*}\noindent}
+\newcommand{\beam}{\begin{eqnarray}}
+\newcommand{\eeam}{\end{eqnarray}\noindent}
+
+\newcommand{\halmos}{\hfill\mbox{\qed}\\}
+\newcommand{\fct}{function}
+\newcommand{\ins}{insurance}
+\newcommand{\ds}{distribution}
+
+\newcommand{\one}{{\bf 1}}
+\newcommand{\eid}{\buildrel{\rm d}\over {=}}
+\newcommand {\Or}{\rm ORDER}
+\newcommand {\In}{\rm INTER}
+
+\newcommand{\bbd}{{\mathbb D}}
+\newcommand{\vi}{$V_{ij}$ }
+\newcommand{\rr}{R^{\prime\prime}}
+%\newcommand{\R}{R^\prime}
+\newcommand{\ci}{\frac{1}{c}}
+\newcommand{\Vi}{V(n)}
+\newcommand{\dR}{\mathcal R}
+\newcommand{\md}[1]{\left(\ \rm{mod}\ \it{#1}\right)}
+\newcommand{\So}{s}
+%\begin{document}
+%\def\DoubleSpace{\baselineskip=24pt}
+%\DoubleSpace \sloppy
+
+\begin{document}
+
+
+
+\title{Homework \#5 \\ Algorithms I \\ 600.463 \\Spring 2017}
+\author{\textbf{Due on:} Saturday, March 18th, 11:59pm \\
+\textbf{Late submissions:} will NOT be accepted\\
+\textbf{Format:} Please start each problem on a new page.
+\\\textbf{Where to submit:} On Gradescope, under HW5
+\\ Please type your answers; handwritten assignments will not be accepted.
+\\ To get full credit, your answers must be explained clearly,\\ with enough details
+and rigorous proofs.
+\\}
+
+\maketitle
+
+
+\section*{ Problem 1 (20 point)}
+Let $G = G(V,E)$ be a directed graph represented by an adjacency list.
+$G$ is a bipartite graph if it is possible to partition the vertices of $G$ into two disjoint sets, i.e. $V = V_1\cup V_2$ and $V_1\cap V_2 = \emptyset$ such
+that there are no edges between vertices in the $V_1$ and  there are no edges between vertices in the $V_2$. 
+Design an efficient algorithm that works in $O(|E|+|V|)$ time and checks if $G$ is bipartite.
+Prove the correctness of your algorithm and analyze the running time.
+
+\section*{Problem 2 (20 points)}
+\subsection*{Problem 2.1 (10 points)}
+Suppose we wish not only to increment a counter but also to reset it to zero (i.e., make all bits in it 0). Counting th†e time to examine or modify a bit as $\Theta(1)$, show how to implement a counter as an array of bits so that any sequence of $n$ $INCREMENT$ and $RESET$ operations takes time $O(n)$ on an initially zero counter. (Hint: Keep a pointer to the high-order 1.)
+
+\subsection*{Problem 2.2 (10 points)}
+Design a data structure to support the following two operations for a dynamic multiset $S$ of integers, which allows duplicate values:\\\\†
+$INSERT(S,x)$ inserts $x$ into $S$.\\\\
+$DELETE$-$LARGER$-$HALF(S)$ deletes the largest $\lceil{|S|/2}\rceil$ elements from $S$.\\\\
+Explain how to implement this data structure so that any sequence of $m$ $INSERT$ and $DELETE$-$LARGER$-$HALF$ operations runs in $O(m)$ time. Your implementation should also include a way to output the elements of $S$ in $O(|S|)$ time.
+
+\end{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
