@@ -1,0 +1,70 @@
+\documentclass[letterpaper, 11pt]{article}
+\usepackage{latexsym}
+\usepackage{amssymb}
+\usepackage{times}
+%\usepackage[in]{fullpage}
+\usepackage{amsmath,amsfonts,amsthm}
+\usepackage{graphicx}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+
+%\documentclass[11pt]{article}
+%\pagestyle{myheadings}
+%\usepackage[ruled,nothing]{algorithm}
+%\usepackage{algorithmic}
+%\usepackage[dvips]{epsfig,graphicx}
+%\numberwithin{equation}{section}
+
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\supp}{\textsf{supp}}
+
+\begin{document}
+
+
+
+\title{Homework \#7 \\ Introduction to Algorithms \\ 601.433/633 \\Spring 2020}
+\author{\textbf{Due on:} Wednesday, April 29th, 12pm}
+\date{}
+\maketitle
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\setlength{\parindent}{0em}
+\setlength{\parskip}{1em}
+
+\section*{Problem 1 (15 points)}
+For a directed graph $G =(V, E)$ with capacities $c : E \rightarrow \R^+$ and a flow $f : E \rightarrow \R^+$, the \emph{support} of the flow $f$ on $G$ is the set of edges $E_{\supp} := \{e \in E \ | \ f(e) > 0\}$, i.e. the edges on which the flow function is positive. 
+
+Show that for any directed graph $G = (V, E)$ with non-negative capacities $c : E \rightarrow \R^+$ there always exists a maximum flow $f^* : E \rightarrow \R^+$ whose \textit{support} has no directed cycle.
+
+Hint: Proof by contradiction?
+
+
+\section*{Problem 2 (20 points)}
+
+In a graph $G = (V, E)$, a matching is a subset of the edges $M \subseteq E$ such that no two edges in $M$ share an end-point (i.e. incident on the same vertex).
+
+Write a linear program that, given a bipartite graph $G = (V_1, V_2, E)$, solves the maximum-bipartite-matching problem. I.e. The LP, when solved, should find the largest possible matching on the graph $G$. 
+
+Clearly mention the variables, constraints and the objective function. Prove why the solution to your LP solves the maximum-bipartite-matching problem. You may assume that all variables in the solution to your LP has integer values. 
+
+
+\section*{Problem 3 (15 points)}
+In class you saw that \textsc{Vertex-Cover} and \textsc{Independent-Set} are related problems. Specifically, a graph $G = (V, E)$ has a vertex-cover of size $k$ \emph{if and only if} it has an independent-set of size $|V| - k$. 
+
+We also know that there is a polynomial-time $2$-approximation algorithm for \textsc{Vertex-Cover}. Does this relationship imply that there is a polynomial-time approximation algorithm
+with a constant approximation ratio for \textsc{Independent-Set}? Justify your answer.
+
+
+\section*{Problem 4 (10 points)}
+You are given a biased coin $c$ but you don’t know what the bias is. I.e. the coin $c$ outputs \textit{H} with probability $p \in [0, 1]$ and \textit{T} with probability $1-p$ every time you toss it but you don't know what $p$ is. 
+
+Can you simulate a fair coin using by tossing $c$? I.e. Come up with a ``rule'' for tossing $c$ (possible several times) and outputting \textit{H} or \textit{T} based on the output of the coin tosses of $c$ such that you will output \textit{H} with probability $1/2$ and \textit{T} with probability $1/2$? Please prove the correctness of your solution.
+
+Hint: 
+i) What if you had two coins $c_1$, $c_2$ with the same bias instead of one? Can you toss them together and output \textit{H} or \textit{T} based on the output? ii) You shouldn't be trying to ``estimate'' $p$.
+
+\end{document}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
