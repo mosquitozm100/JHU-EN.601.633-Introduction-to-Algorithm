@@ -1,0 +1,170 @@
+\documentclass[letterpaper, 11pt]{article}
+\usepackage{latexsym}
+\usepackage{amssymb}
+\usepackage{times}
+%\usepackage[in]{fullpage}
+\usepackage{amsmath,amsfonts,amsthm}
+\usepackage{graphicx}
+
+
+\bibliographystyle{plain}
+
+
+\def \br#1{\left \{#1 \right \}}
+\def \pr#1{\left (#1 \right)}
+
+\newcommand{\Gm}{\Gamma}
+\newcommand{\ep}{\epsilon}
+
+
+\newtheorem{lemma}{Lemma}[section]
+\newtheorem{figur}[lemma]{Figure}
+\newtheorem{theorem}[lemma]{Theorem}
+\newtheorem{proposition}[lemma]{Proposition}
+\newtheorem{definition}[lemma]{Definition}
+\newtheorem{corollary}[lemma]{Corollary}
+\newtheorem{example}[lemma]{Example}
+\newtheorem{exercise}[lemma]{Exercise}
+\newtheorem{remark}[lemma]{Remark}
+\newtheorem{fig}[lemma]{Figure}
+\newtheorem{tab}[lemma]{Table}
+\newtheorem{fact}[lemma]{Fact}
+\newtheorem{test}{Lemma}
+\newtheorem{algorithm}[lemma]{Algorithm}
+
+
+\begin{document}
+\setlength{\parindent}{0em}
+\setlength{\parskip}{1em}
+
+
+\title{{\huge Final Exam \\ Introduction to Algorithms \\ 601.433/633 \\Spring 2020}
+\date{Due: Friday,  May 8th, 10am} }
+
+
+\maketitle
+
+\section*{Ethics Statement}
+
+{\huge I agree to complete this exam without unauthorized assistance from
+      any person, materials, or device.}
+
+\ \
+
+\ \ \
+
+\
+
+
+{\huge Name   \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \  \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \                    }
+
+
+\ \\
+\ \\
+\ \\
+\ \\
+
+
+
+{\huge Signature   \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \  \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \                 Date   }
+
+\newpage
+
+
+\section{Problem \#1: YES/NO QUESTIONS (100 points)\\ (10 questions, 10 points per question)}
+
+For every question answer yes or no.
+\begin{enumerate}
+
+\item Let $T$ be an MST in graph $G=(V,E)$ and let $a,b\in V$ be two vertices. Let $P$ be the path in $T$ from $a$ to $b$. $P$ is always a shortest path from $a$ to $b$. \\ \\ \\ \ \ \ \ \ \ \  \ \ \ \ \ yes \ \  \ \ \ \ no       \\
+\item Prim and Kruskal algorithm may yield different spanning trees. \\ \\ \\ \ \ \ \ \ \ \  \ \ \ \ \ yes \ \  \ \ \ \ no       \\
+\item There exist two strictly positive functions $f,g$ such that $f(x) = o(g(x))$ and $(g(x))^2=o((f(x))^3)$. \\ \\ \\ \ \ \ \ \ \ \  \ \ \ \ \ yes \ \  \ \ \ \ no       \\
+\item If $f(n) = \Theta(g(n))$ then $2^{f(n)} = \Theta\left(2^{g(n)}\right)$. \\ \\ \\ \ \ \ \ \ \ \  \ \ \ \ \ yes \ \  \ \ \ \ no       \\
+\item It is always possible to sort an array $A$ of $n$ real numbers in linear time if $\max_{i=1}^n|A[i]|\le 5$. \\ \\ \\ \ \ \ \ \ \ \  \ \ \ \ \ yes \ \  \ \ \ \ no       \\
+
+\item Let $G=(V,E)$ be a directed weighted graph and let $\delta(a,b)$ be the length of a shortest path from $a$ to $b$. 
+Let $a,b,c \in V$. If $\delta(a,b) + \delta(b,c) \le \delta(a,c)$ then $b$ belongs to a shortest path from $a$ to $c$. \\ \\ \\ \ \ \ \ \ \ \  \ \ \ \ \ yes \ \  \ \ \ \ no       \\
+\item There is some fixed input $X$ for which Randomized QuickSort always runs in $\Theta(n^2)$ time. \\ \\ \\ \ \ \ \ \ \ \  \ \ \ \ \ yes \ \  \ \ \ \ no       \\
+
+\item For all undirected, weighted graphs, if we increase all weights by exactly one then all shortest paths do not change. \\ \\ \\ \ \ \ \ \ \ \  \ \ \ \ \ yes \ \  \ \ \ \ no       \\
+
+\item  An algorithm whose running time satisfies the recurrence $$P(n) = 10 P(n/2) + O(n^{10})$$
+is asymptotically faster than an algorithm whose running time satisfies the recurrence $$E(n) = 1.1 E(n -	 1000) + O(1).$$
+\\ \\  \ \ \ \ \ yes \ \  \ \ \ \ no       \\
+\item Let $G$ be undirected, weighted graph. If MST is unique then all weights are distinct. \\ \\ \\ \ \ \ \ \ \ \  \ \ \ \ \ yes \ \  \ \ \ \ no       \\
+\end{enumerate}
+
+\newpage
+
+\section{Problem \#2: \textbf{Basic} (60 points)}
+You are given array $A$ of $n$ distinct integers. It is known that $A$ has been sorted and then cyclically shifted (to the right)
+by $k$ elements where $k$ is unknown to you.
+For example, array $A = \{5,6,1,2,3,4\}$ is sorted and cyclically shifted by $k=2$ elements.
+
+Design an algorithm for finding the median value of the elements in the array $A$. Prove the correctness of your algorithm and give the running time.
+Your answers must be explained clearly, and with enough details.
+The full credit will be given if the running time of your algorithm is $o(\sqrt{n})$ (little o).
+
+\newpage
+
+
+
+
+
+\section{Problem \#3: \textbf{Network Flow} (60 points)}
+You are given a flow network $G$, and $G$ has edges entering the source $s$. Let $f$ be an integer flow in $G$ in which one of the edges $(v,s)$ entering the source has $f(v,s)=2$. Prove formally that there must exist another flow $f'$ with $f'(v,s)=0$ such that $|f|=|f'|$.
+
+Hint: Maybe you can use a result from your homework?
+
+\newpage
+
+\section{Problem \#4: \textbf{Dynamic Programming} (60 points)}
+
+You are given an $n\times n$ binary matrix (each entry of the matrix is either ``0'' or ``1''), design a dynamic programming algorithm to find the largest
+rectangle containing only 1's and return its area, prove correctness and provide running time analysis.
+Full score will given for the solution with the running time $O(n^2)$.
+
+For example, given the following matrix,
+\[
+  \begin{bmatrix}
+    1 & 0 & 1 & 0 & 0\\
+    1 & 0 & 1 & 1 & 1 \\
+    1 & 1 & 1 & 1 & 1 \\
+    1 & 0 & 0 & 1 & 0
+  \end{bmatrix}
+\]
+the largest rectangle containing only 1's is the following and its area is 6.
+\[
+  \begin{bmatrix}
+    1 & 1 & 1 \\
+    1 & 1 & 1
+  \end{bmatrix}
+\]
+\newpage
+
+\section{Problem \#5: \textbf{MST} (60 points)}
+Let $G=(V,E)$ be an undirected, connected and weighted graph with the weight function $w$.
+Assume that there exist an edge $e_0$ and two numbers $X,Y$ such that $X<Y$, $w(e_0) = Y$ and $w(e) = X$ for all $e\in E, e\neq e_0$.
+Design an efficient algorithm that finds an MST in $G$.
+Prove the correctness of your algorithm and give the running time.
+Your answers must be explained clearly, and with enough details.
+The full credit will be given if the running time of your algorithm is $o(|E|\log(|V|))$.
+\newpage
+
+\section{Problem \#6: \textbf{Median} (60 points)}
+For $n$ distinct numbers $x_1, x_2, \ldots, x_n$ with distinct positive weights $w_1, w_2, \ldots , w_n$ such that $\sum_{i=1}^n{w_i} = 1$,
+
+the \textbf{weighted (lower) median} is the number $x_k$ satisfying
+
+$$
+\sum_{x_i < x_k} w_i < \frac{1}{2}
+$$
+and
+$$
+\sum_{x_i > x_k} w_i \le \frac{1}{2}
+$$
+
+For example, if numbers are $0.1, 0.35, 0.05, 0.1, 0.15, 0.05, 0.2$ and each number equals its weight (that is $w_i = x_i$ for $i = 1,2,\ldots, 7$), then the median is $0.1$, but the weighted median is $0.2$. \\
+
+Devise an algorithm that computes the weighted median in $\Theta(n)$ worst-case time. Prove correctness and provide running time analysis. $30$ points will be given for the algorithm with running time $O(n\log n)$.
+\end{document}
